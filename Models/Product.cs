@@ -16,7 +16,7 @@ namespace FeelGoodSubstitutes.Models
         public string? Product_Image_URL { get; set; }
         public float? Product_Price { get; set; }
         public string? Product_URL { get; set; }
-        public float Eco_Rating { get; set; }
+        public float? Eco_Rating { get; set; }
 
         public float Customer_Rating { get; set; }
         public string? About { get; set; }
