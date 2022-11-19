@@ -1,0 +1,46 @@
+﻿@{
+    ViewData["Title"] = "Category Filter View";
+}
+
+@model List<Product>
+
+@*Search feature by category*@
+<form asp-controller="Home" asp-action="CategoryView" method="get">
+    <p>
+        Category: <input type="text" name="search_category" />
+        <input type="submit" value="Filter" />
+    </p>
+</form>
+
+<div class="text-center">
+    <h1 class="display-4">Categories</h1>
+</div>
+
+<div class="text-center">
+    <table class="table table-bordered table-striped">
+
+        <thead class="font-weight-bold">
+            <tr>
+                <td><b>Image</b></td>
+                <td><b>Product</b></td>
+                <td><b>Vendor</b></td>
+                <td><b>Price</b></td>
+                <td><b>About</b></td>
+            </tr>
+        </thead>
+
+        @*now add rows to the table, using a loop*@
+        <tbody>
+            @foreach (Product m in Model)
+            {
+                <tr>
+                    <td class="tdImage"><img src="@m.Product_Image_URL" width="140" /></td>
+                    <td class="td1"><h2>@m.Product_Name</h2></td>
+                    <td><h3>@m.Vendor_Name</h3></td>
+                    <td><h3>@m.Product_Price</h3></td>
+                    <td><h3>@m.About</h3></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
