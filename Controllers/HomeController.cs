@@ -40,6 +40,13 @@ namespace FeelGoodSubstitutes.Controllers
             return View(await category.ToListAsync());
         }
 
+
+        public IActionResult Product(int id)
+        {
+            var product = _context.Products.Single(x => x.ID == id);
+
+            return View("Product", product);
+        }
         public IActionResult Privacy()
         {
             return View();
