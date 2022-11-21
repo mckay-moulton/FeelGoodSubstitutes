@@ -17,15 +17,15 @@
 </div>
 
 <div class="text-center">
+    @*control table width here*@
     <table class="table table-bordered table-striped">
 
         <thead class="font-weight-bold">
             <tr>
-                <td><b>Image</b></td>
-                <td><b>Product</b></td>
-                <td><b>Vendor</b></td>
-                <td><b>Price</b></td>
+                <td><b>Product</b></td></h3>
                 <td><b>About</b></td>
+                <td><b>Description</b></td>
+
             </tr>
         </thead>
 
@@ -33,12 +33,13 @@
         <tbody>
             @foreach (Product m in Model)
             {
+@*                <h2>@m.Product_Name</h2>*@
                 <tr>
-                    <td class="tdImage"><img src="@m.Product_Image_URL" width="140" /></td>
-                    <td class="td1"><h2>@m.Product_Name</h2></td>
-                    <td><h3>@m.Vendor_Name</h3></td>
-                    <td><h3>@m.Product_Price</h3></td>
-                    <td><h3>@m.About</h3></td>
+                    <td class="tdImage"><h2>@m.Product_Name</h2><img src="@m.Product_Image_URL" width="220" /></td>
+@*                    <td class="td1"><h2>@m.Product_Name</h2></td>*@
+                    <td><h3><b>Vendor: </b><h3>@m.Vendor_Name</h3></h3><h3><b>Price: </b><h3>$@m.Product_Price</h3></h3></td>
+@*                    <td><h3>@m.Product_Price</h3></td>*@
+                    <td><h2>@m.About</h2></td>
                 </tr>
             }
         </tbody>
