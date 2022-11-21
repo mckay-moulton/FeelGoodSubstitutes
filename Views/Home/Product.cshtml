@@ -1,0 +1,30 @@
+﻿@{
+    ViewData["Title"] = "Category Filter View";
+}
+
+@model Product
+<div class="text-center">
+    <h2> @Model.Product_Name </h2>
+    <h5> by @Model.Vendor_Name</h5>
+</div>
+<br /> 
+<div style="width: 100%">
+    <div style="width: 40%; float:left">
+        <h2 class="Image"><img src="@Model.Product_Image_URL" width="300" /></h2>
+
+    </div>
+    <div style="width: 60%; float:right">
+        <h3> Price: $@Model.Product_Price</h3>
+        
+        <h3>Customer Rating:</h3>
+            <h4>@Model.Customer_Rating / 5.0</h4>
+        
+        <h3>Eco Rating: </h3>
+            <h4>@Model.Eco_Rating / 5.0</h4>
+        
+        <h3>About the Product:  </h3> 
+            <h4>@Model.About</h4>
+
+        <a class="button" @*URL reroute*@> Shop Product </a>
+    </div>
+</div>

@@ -18,6 +18,7 @@
                 <td><b>Vendor</b></td>
                 <td><b>Price</b></td>
                 <td><b>About</b></td>
+                <td><b>Product Details</b></td>
             </tr>
         </thead>
 
@@ -31,6 +32,7 @@
                     <td><h3>@m.Vendor_Name</h3></td>
                     <td><h3>@m.Product_Price</h3></td>
                     <td><h3>@m.About</h3></td>
+                    <td><h3> <a asp-controller="Home" asp-action="Product" asp-route-ID="@m.ID" class="btn btn-outline-info" style="font-weight:bold">Details</a></h3></td>
                 </tr>
             }
         </tbody>
