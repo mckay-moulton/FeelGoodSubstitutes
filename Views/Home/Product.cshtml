@@ -2,28 +2,42 @@
     ViewData["Title"] = "Category Filter View";
 }
 
+<style>
+    h3 {font-size:xx-large; font-weight:490}
+    h4 {font-weight:400}
+    image {position:absolute; border: 10px}
+</style>
+
 @model Product
 <div class="text-center">
-    <h2> @Model.Product_Name </h2>
-    <h5> by @Model.Vendor_Name</h5>
+    <h1 class="display-4"> @Model.Product_Name </h1>
+    <h2 style="font-weight:lighter"> by @Model.Vendor_Name</h2>
 </div>
+
+
+
 <br /> 
 <div style="width: 100%">
-    <div style="width: 40%; float:left">
+    <div style="width: 35%; float:left">
         <h2 class="Image"><img src="@Model.Product_Image_URL" width="500" /></h2>
 
     </div>
     <div style="width: 60%; float:right">
-        <h3> Price: $@Model.Product_Price</h3>
-        
+
+        <h3>Price:</h3>
+        <h4>$@Model.Product_Price</h4>
+
+
         <h3>Customer Rating:</h3>
-            <h4>@Model.Customer_Rating / 5.0</h4>
+        <h4>@Model.Customer_Rating / 5.0</h4>
         
         <h3>Eco Rating: </h3>
-            <h4>@Model.Eco_Rating / 5.0</h4>
+        <h4>@Model.Eco_Rating / 5.0</h4>
         
-        <h3>About the Product:  </h3> 
-            <h4>@Model.About</h4>
+        <h3>About the Product:  </h3>
+        <h4 style="font-weight:lighter">@Model.About</h4>
+
+        <br />
 
         <a class="btn btn-info" href="@Model.Product_URL"> Shop Product </a>
     </div>
