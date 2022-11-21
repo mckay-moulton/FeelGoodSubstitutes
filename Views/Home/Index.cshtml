@@ -8,7 +8,7 @@
     <h1 class="display-4">Welcome</h1>
 </div>
 
-<div class="text-center">
+<div class="text-center, text-md-center">
     <table class="table table-bordered table-striped">
 
         <thead class="font-weight-bold">
@@ -27,7 +27,7 @@
             @foreach (Product m in Model)
             {
                 <tr>
-                    <td class="tdImage"><img src="@m.Product_Image_URL" width="140" /></td>
+                    <td class="tdImage" ><img src="@m.Product_Image_URL" width="140" /></td>
                     <td class="td1"><h2>@m.Product_Name</h2></td>
                     <td><h3>@m.Vendor_Name</h3></td>
                     <td><h3>@m.Product_Price</h3></td>

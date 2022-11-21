@@ -13,7 +13,7 @@
 </form>
 
 <div class="text-center">
-    <h1 class="display-4">Categories</h1>
+    <h1 class="display-4">Find.Explore.Substitute</h1>
 </div>
 
 <div class="text-center">
@@ -35,11 +35,9 @@
             {
 @*                <h2>@m.Product_Name</h2>*@
                 <tr>
-                    <td class="tdImage"><h2>@m.Product_Name</h2><img src="@m.Product_Image_URL" width="220" /></td>
-@*                    <td class="td1"><h2>@m.Product_Name</h2></td>*@
-                    <td><h3><b>Vendor: </b><h3>@m.Vendor_Name</h3></h3><h3><b>Price: </b><h3>$@m.Product_Price</h3></h3></td>
-@*                    <td><h3>@m.Product_Price</h3></td>*@
-                    <td><h2>@m.About</h2></td>
+                    <td class="tdImage" style="text-align: center; vertical-align: middle;"><h2>@m.Product_Name</h2><img src="@m.Product_Image_URL" width="220" /></td>
+                    <td style="text-align: center; vertical-align: middle;"><h2>@m.About</h2></td>
+                    <td style="text-align: center; vertical-align: middle;"><h3><b>Vendor: </b><h3>@m.Vendor_Name</h3></h3><br /><h3><b>Price: </b><h3>$@m.Product_Price</h3><a asp-controller="Home" asp-action="Product" asp-route-ID="@m.ID" class="btn btn-outline-info" style="font-weight:bold">More</a></h3></td>
                 </tr>
             }
         </tbody>
