@@ -10,7 +10,7 @@
 <br /> 
 <div style="width: 100%">
     <div style="width: 40%; float:left">
-        <h2 class="Image"><img src="@Model.Product_Image_URL" width="300" /></h2>
+        <h2 class="Image"><img src="@Model.Product_Image_URL" width="500" /></h2>
 
     </div>
     <div style="width: 60%; float:right">
@@ -25,6 +25,6 @@
         <h3>About the Product:  </h3> 
             <h4>@Model.About</h4>
 
-        <a class="button" @*URL reroute*@> Shop Product </a>
+        <a class="btn btn-info" href="@Model.Product_URL"> Shop Product </a>
     </div>
 </div>
