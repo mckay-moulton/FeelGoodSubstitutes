@@ -4,37 +4,63 @@
 
 @model List<Product>
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-</div>
-
-<div class="text-center, text-md-center">
-    <table class="table table-bordered table-striped">
-
-        <thead class="font-weight-bold">
-            <tr>
-                <td><b>Image</b></td>
-                <td><b>Product</b></td>
-                <td><b>Vendor</b></td>
-                <td><b>Price</b></td>
-                <td><b>About</b></td>
-                <td><b>Product Details</b></td>
-            </tr>
-        </thead>
-
-        @*now add rows to the table, using a loop*@
-        <tbody>
-            @foreach (Product m in Model)
-            {
-                <tr>
-                    <td class="tdImage" ><img src="@m.Product_Image_URL" width="140" /></td>
-                    <td class="td1"><h2>@m.Product_Name</h2></td>
-                    <td><h3>@m.Vendor_Name</h3></td>
-                    <td><h3>@m.Product_Price</h3></td>
-                    <td><h3>@m.About</h3></td>
-                    <td><h3> <a asp-controller="Home" asp-action="Product" asp-route-ID="@m.ID" class="btn btn-outline-info" style="font-weight:bold">Details</a></h3></td>
-                </tr>
-            }
-        </tbody>
-    </table>
-</div>
+<header class="bg-dark py-5">
+    <div class="container px-5">
+        <div class="row gx-5 align-items-center justify-content-center">
+            <div class="col-lg-8 col-xl-7 col-xxl-6">
+                <div class="my-5 text-center text-xl-start">
+                    <h1 class="display-5 fw-bolder text-white mb-2">Welcome to FeelGoodSubstitutes!</h1>
+                    <p class="lead fw-normal text-white-50 mb-4">Quickly find eco-friendly substitutes for everyday products you can feel good about!</p>
+                    <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xl-start">
+                        <a class="btn btn-primary btn-lg px-4 me-sm-3" href="#features">Get Started</a>
+                        <a class="btn btn-outline-light btn-lg px-4" href="#!">Learn More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-5 col-xxl-6 d-none d-xl-block text-center">
+                @*---------- Product Carousel ----------*@
+                <div class="text-center">
+                    <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                        </div>
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="/imgs/food-wrap.jpg" class="d-block w-100" alt="...">
+                                <div class="carousel-caption d-none d-md-block">
+                                    <h5>LilyBee Beeswax Food Wrap</h5>
+                                    <p>A natural and reusable alternative to plastic wrap!</p>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <img src="/imgs/sunglasses.jpg" class="d-block w-100" alt="...">
+                                <div class="carousel-caption d-none d-md-block">
+                                    <h5>Natural Bamboo + Ice Blue Mirror Polarized Lens</h5>
+                                    <p>Hand polished ultra-lightweight eco-friendly frames!</p>
+                                </div>
+                            </div>
+                            <div class="carousel-item">
+                                <img src="/imgs/toothpaste-tablets.jpg" class="d-block w-100" alt="...">
+                                <div class="carousel-caption d-none d-md-block">
+                                    <h5>Fresh Mint Toothpaste Bits</h5>
+                                    <p>Bite into fresh breath with Fresh Mint toothpaste bits!</p>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+                @*<img class="img-fluid rounded-3 my-5" src="https://dummyimage.com/600x400/343a40/6c757d" alt="..." />*@
+            </div>
+        </div>
+    </div>
+</header>

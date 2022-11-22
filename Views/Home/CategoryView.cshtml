@@ -4,16 +4,74 @@
 
 @model List<Product>
 
-@*Search feature by category*@
-<form asp-controller="Home" asp-action="CategoryView" method="get">
+<div class="text-center">
+    <h1 class="display-4">Top Products</h1>
+</div>
+
+@*---------- Category Filter ----------*@
+<form class="row g-3" asp-controller="Home" asp-action="CategoryView" method="get">
+    <div class="col-auto">
+        <label for="search_category">Category:</label>
+    </div>
+    <div class="col-auto">
+        <select class="form-select" aria-label="Default select example" name="search_category" id="search_category">
+            <option value="">All</option>
+            <option value="Dental Hygiene">Dental Hygiene</option>
+            <option value="Houshold Cleaning">Houshold Cleaning</option>
+            <option value="Kitchen">Kitchen</option>
+            <option value="Outdoors">Outdoors</option>
+        </select>
+    </div>
+    <div class="col-auto">
+        <button type="submit" class="btn btn-primary" value="Filter">Filter</button>
+    </div>
     <p>
-        Category: <input type="text" name="search_category" />
-        <input type="submit" value="Filter" />
+        @*<button type="submit" value="Filter">Filter</button>*@
     </p>
 </form>
 
+@*---------- ******************** -----------*@
+
+@*---------- Products in Cards ----------*@
+@foreach (Product m in Model)
+{
+    <div class="card mb-3">
+        <h5 class="card-header">@m.Product_Name</h5>
+        <div class="row g-0">
+            <div class="col-md-4 text-center row align-items-center ">
+                <a asp-controller="Home" asp-action="Product" asp-route-ID="@m.ID">
+                    <img src="@m.Product_Image_URL" style="width:200px; height:200px; object-fit:contain;" />
+                </a>
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h5 class="card-title">
+                        <a asp-controller="Home" asp-action="Product" asp-route-ID="@m.ID" style="text-decoration:none;">@m.Product_Name</a> | $@m.Product_Price
+                    </h5>
+                    <p class="card-text">
+                        @m.About <a asp-controller="Home" asp-action="Product" asp-route-ID="@m.ID" style="text-decoration:none;"> ...Learn More</a>
+                    </p>
+                    <p class="card-text">
+                        <small class="text-muted">Eco-Rating: @m.Eco_Rating/5 &emsp; Customer Rating: @m.Customer_Rating/5 &emsp;</small>
+                    </p>
+                    <p class="card-text">
+                        <span class="badge rounded-pill bg-light text-dark">@m.Category</span> &emsp;
+                        <span class="badge rounded-pill bg-light text-dark">@m.Tags</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+@*---------- ******************** -----------*@
+
+
+@*---------- Products in Table ----------*@
+
+<!--<br />
+<br />
 <div class="text-center">
-    <h1 class="display-4">Find.Explore.Substitute</h1>
+    <h1 class="display-4">Products Table</h1>
 </div>
 
 <div class="text-center">
@@ -21,25 +79,41 @@
     <table class="table table-bordered table-striped">
 
         <thead class="font-weight-bold">
-            <tr>
-                <td><b>Product</b></td></h3>
+            <tr style="height: 30px;">
+                <td><b>Image</b></td>
+                <td><b>Product</b></td>
+                <td><b>Vendor</b></td>
+                <td><b>Price</b></td>
+                <td><b>Eco-Rating</b></td>
+                <td><b>Customer Rating</b></td>
                 <td><b>About</b></td>
                 <td><b>Description</b></td>
 
             </tr>
-        </thead>
+        </thead>-->
 
         @*now add rows to the table, using a loop*@
-        <tbody>
+        <!--<tbody>
             @foreach (Product m in Model)
             {
-@*                <h2>@m.Product_Name</h2>*@
-                <tr>
-                    <td class="tdImage" style="text-align: center; vertical-align: middle;"><h2>@m.Product_Name</h2><img src="@m.Product_Image_URL" width="220" /></td>
-                    <td style="text-align: center; vertical-align: middle;"><h2>@m.About</h2></td>
-                    <td style="text-align: center; vertical-align: middle;"><h3><b>Vendor: </b><h3>@m.Vendor_Name</h3></h3><br /><h3><b>Price: </b><h3>$@m.Product_Price</h3><a asp-controller="Home" asp-action="Product" asp-route-ID="@m.ID" class="btn btn-outline-info" style="font-weight:bold">More</a></h3></td>
+                <tr style="height: 60px;">
+                    <td class="tdImage">
+                        <a asp-controller="Home" asp-action="Product" asp-route-ID="@m.ID">
+                            <img src="@m.Product_Image_URL" style="width:140px; height:140px; object-fit:contain;" />
+                        </a>
+                    </td>
+                    <td>
+                        <a asp-controller="Home" asp-action="Product" asp-route-ID="@m.ID">@m.Product_Name</a>
+                    </td>
+                    <td>@m.Vendor_Name</td>
+                    <td>$@m.Product_Price</td>
+                    <td>@m.Eco_Rating/5</td>
+                    <td>@m.Customer_Rating/5</td>
+                    <td>@m.About <a asp-controller="Home" asp-action="Product" asp-route-ID="@m.ID" style="text-decoration:none;"> ...Learn More</a></td>
                 </tr>
             }
         </tbody>
     </table>
-</div>
+</div>-->
+
+@*---------- ******************** -----------*@
