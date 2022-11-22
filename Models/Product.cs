@@ -20,7 +20,10 @@ namespace FeelGoodSubstitutes.Models
 
         public float Customer_Rating { get; set; }
         public string? About { get; set; }
+        public string? About_Summary { get; set; }
         public string? Category { get; set; }
+        public string? Tags { get; set; }
+
 
 
 
