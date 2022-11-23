@@ -40,6 +40,21 @@ namespace FeelGoodSubstitutes.Controllers
             return View(await category.ToListAsync());
         }
 
+        public async Task<IActionResult> Low_High(string search_category)
+        {
+            //basically selecting all the items in the DB (but in a way that provides flexibility later on in this method
+            var category = from m in _context.Products.OrderByDescending(s => s.Product_Price)
+                           select m;
+
+            //if we have a returned value, then filter the results by the delected category
+            if (!String.IsNullOrEmpty(search_category))
+            {
+                category = category.Where(s => s.Category!.Contains(search_category)).OrderByDescending(s => s.Eco_Rating).ThenBy(s => s.Customer_Rating);
+            }
+
+            return View(await category.ToListAsync());
+        }
+
 
         public IActionResult Product(int id)
         {
