@@ -57,7 +57,7 @@ namespace FeelGoodSubstitutes.Controllers
             //if we have a returned value, then filter the results by the delected category
             if (!String.IsNullOrEmpty(search_category))
             {
-                category = category.Where(s => s.Category!.Contains(search_category)).OrderByDescending(s => s.Eco_Rating).ThenBy(s => s.Customer_Rating);
+                category = category.Where(s => s.Category!.Contains(search_category)).OrderByDescending(s => s.Product_Price).ThenBy(s => s.Customer_Rating);
             }
 
             return View(await category.ToListAsync());
@@ -80,18 +80,18 @@ namespace FeelGoodSubstitutes.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult SendEmail(string receiver, string subject, string a_message)
+        public ActionResult SendEmail(string from, string subject, string a_message)
         {
             var message = new MimeMessage();
             //will send an email using a new outlook account
             message.From.Add(new MailboxAddress("Jack Witherspoon", "thisisagreatbigtest@outlook.com"));
             //next part is mostly just to fill a parameter requiement 
-            message.To.Add(new MailboxAddress("Estimed ASP.NET developer", receiver));
+            message.To.Add(new MailboxAddress("Estimed ASP.NET developer", "mckaymoulton1@gmail.com"));
             message.Subject = subject;
 
             message.Body = new TextPart("plain")
             {
-                Text = a_message
+                Text = from + a_message
             };
 
             using (var client = new MailKit.Net.Smtp.SmtpClient())
