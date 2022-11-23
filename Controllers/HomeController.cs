@@ -8,6 +8,14 @@ using System.Threading.Tasks;
 using System.Reflection.Metadata.Ecma335;
 using Microsoft.EntityFrameworkCore;
 
+//add email packages
+using System.Net.Mail;
+using MimeKit;
+using MailKit.Net.Smtp;
+using MailKit;
+using MimeKit;
+using MailKit.Security;
+
 namespace FeelGoodSubstitutes.Controllers
 {
     public class HomeController : Controller
@@ -66,6 +74,40 @@ namespace FeelGoodSubstitutes.Controllers
         {
             return View();
         }
+        //load email/recommendation form view
+        public ActionResult SendEmail()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult SendEmail(string receiver, string subject, string a_message)
+        {
+            var message = new MimeMessage();
+            //will send an email using a new outlook account
+            message.From.Add(new MailboxAddress("Jack Witherspoon", "thisisagreatbigtest@outlook.com"));
+            //next part is mostly just to fill a parameter requiement 
+            message.To.Add(new MailboxAddress("Estimed ASP.NET developer", receiver));
+            message.Subject = subject;
+
+            message.Body = new TextPart("plain")
+            {
+                Text = a_message
+            };
+
+            using (var client = new MailKit.Net.Smtp.SmtpClient())
+            {
+                client.Connect("smtp.office365.com", 587, SecureSocketOptions.StartTls);
+
+                // Note: only needed if the SMTP server requires authentication
+                client.Authenticate("thisisagreatbigtest@outlook.com", "theBagelBoy67");
+
+                client.Send(message);
+                client.Disconnect(true);
+            }
+            return RedirectToAction("Index");
+        }
+
 
     }
+
 }
