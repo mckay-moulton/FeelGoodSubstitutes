@@ -5,7 +5,15 @@
 <style>
     h3 {font-size:xx-large; font-weight:500}
     h4 {font-weight:400}
-    image {position:absolute; border: 10px}
+    /*image {position:fixed; border: 10px}*/
+    footer {
+        margin-top:500px;
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }
+    p {color: white;}
+
 </style>
 
 @model Product
@@ -20,7 +28,6 @@
 <div style="width: 100%">
     <div style="width: 35%; float:left">
         <h2 class="Image"><img src="@Model.Product_Image_URL" width="500" /></h2>
-
     </div>
     <div style="width: 60%; float:right">
 
@@ -41,4 +48,10 @@
 
         <a class="btn btn-info" href="@Model.Product_URL"> Shop Product </a>
     </div>
+</div>
+<div> 
+    <p>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <br /><br /><br /><br /><br /><br /><br /><br /><br />
+    </p>
 </div>
