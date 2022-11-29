@@ -108,6 +108,11 @@ namespace FeelGoodSubstitutes.Controllers
         }
 
 
+        public IActionResult AboutUs()
+        {
+            return View();
+        }
+
     }
 
 }
