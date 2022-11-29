@@ -5,11 +5,11 @@
 @model List<Product>
 
 <div class="text-center">
-    <h1 class="display-4">Top Products</h1>
+    <h1 class="display-4">Top Products: Lowest - Highest Price</h1>
 </div>
 
 @*---------- Category Filter ----------*@
-<form class="row g-3" asp-controller="Home" asp-action="CategoryView" method="get">
+<form class="row g-3" asp-controller="Home" asp-action="Low_High" method="get">
     <div class="col-auto">
         <label for="search_category">Category:</label>
     </div>
@@ -32,11 +32,7 @@
         @*<button type="submit" value="Filter">Filter</button>*@
     </p>
 </form>
-<form asp-controller="Home" asp-action="Low_High" method="get">
-    <label for="search_category">Filter By Price: </label>
-    <button type="submit" class="btn btn-primary" > Low-High</button>
-</form>
-<br />
+
 
 @*---------- ******************** -----------*@
 
@@ -72,56 +68,22 @@
     </div>
 }
 @*---------- ******************** -----------*@
-
-
-@*---------- Products in Table ----------*@
-
-<!--<br />
-<br />
-<div class="text-center">
-    <h1 class="display-4">Products Table</h1>
-</div>
-
-<div class="text-center">
-    @*control table width here*@
-    <table class="table table-bordered table-striped">
-
-        <thead class="font-weight-bold">
-            <tr style="height: 30px;">
-                <td><b>Image</b></td>
-                <td><b>Product</b></td>
-                <td><b>Vendor</b></td>
-                <td><b>Price</b></td>
-                <td><b>Eco-Rating</b></td>
-                <td><b>Customer Rating</b></td>
-                <td><b>About</b></td>
-                <td><b>Description</b></td>
-
-            </tr>
-        </thead>-->
-
-        @*now add rows to the table, using a loop*@
-        <!--<tbody>
-            @foreach (Product m in Model)
-            {
-                <tr style="height: 60px;">
-                    <td class="tdImage">
-                        <a asp-controller="Home" asp-action="Product" asp-route-ID="@m.ID">
-                            <img src="@m.Product_Image_URL" style="width:140px; height:140px; object-fit:contain;" />
-                        </a>
-                    </td>
-                    <td>
-                        <a asp-controller="Home" asp-action="Product" asp-route-ID="@m.ID">@m.Product_Name</a>
-                    </td>
-                    <td>@m.Vendor_Name</td>
-                    <td>$@m.Product_Price</td>
-                    <td>@m.Eco_Rating/5</td>
-                    <td>@m.Customer_Rating/5</td>
-                    <td>@m.About <a asp-controller="Home" asp-action="Product" asp-route-ID="@m.ID" style="text-decoration:none;"> ...Learn More</a></td>
-                </tr>
-            }
-        </tbody>
-    </table>
-</div>-->
-
+@*@foreach (Product m in Model)
+{
+                    <tr style="height: 60px;">
+                        <td class="tdImage">
+                            <a asp-controller="Home" asp-action="Product" asp-route-ID="@m.ID">
+                                <img src="@m.Product_Image_URL" style="width:140px; height:140px; object-fit:contain;" />
+                            </a>
+                        </td>
+                        <td>
+                            <a asp-controller="Home" asp-action="Product" asp-route-ID="@m.ID">@m.Product_Name</a>
+                        </td>
+                        <td>@m.Vendor_Name</td>
+                        <td>$@m.Product_Price</td>
+                        <td>@m.Eco_Rating/5</td>
+                        <td>@m.Customer_Rating/5</td>
+                        <td>@m.About <a asp-controller="Home" asp-action="Product" asp-route-ID="@m.ID" style="text-decoration:none;"> ...Learn More</a></td>
+                    </tr>*@
+@*}*@
 @*---------- ******************** -----------*@
