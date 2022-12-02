@@ -11,7 +11,7 @@
     "FeelGoodSubstitutes": {
       "commandName": "Project",
       "launchBrowser": true,
-      "applicationUrl": "https://localhost:7053;http://localhost:5053",
+      "applicationUrl": "https://localhost:5081;http://localhost:5080",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }

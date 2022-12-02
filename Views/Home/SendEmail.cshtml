@@ -1,25 +1,70 @@
 ﻿@{
     ViewData["Title"] = "Email Form";
 }
-<h2> Send Email </h2>
-<br />
-<br /> @if (ViewBag.Error != null)
 
-{
-     <h2> @ViewBag.Error </h2>
-}
-@{
-    <form method="post"
-      action="SendEmail">
-        <div class="container">
-            <span class="form-control-static"> From (OPTIONAL: Enter email address + name ): </span> <input class="form-control"
-            type="text"
-            name="receiver" /> <br /> <span class="form-control-static"> Subject (REQUIRED): </span> <input class="form-control"
-            type="text"
-            name="subject" /> <br /> <span class="form-control-static"> Message/Recommendation (REQUIRED): </span> 
-            @*<input class="form-control" type="text" name="a_message" /> <br />*@
-            <textarea class="form-control" type="text" name="a_message" rows="2" cols="35"></textarea>
-            <input class="btn btn-primary" type="submit" value="Send" />
+<!-- Contact form-->
+<div class="bg-light rounded-3 py-5 px-4 px-md-5 mb-5">
+    <div class="text-center mb-5">
+        <div class="feature bg-primary bg-gradient text-white rounded-3 mb-3"><i class="bi bi-envelope"></i></div>
+        <h1 class="fw-bolder">Submit a product for review</h1>
+        <p class="lead fw-normal text-muted mb-0">Got any eco-friendly substitutes you enjoy? We'd love to hear from you!</p>
+    </div>
+
+    @if (ViewBag.Error != null)
+    {
+        <h2> @ViewBag.Error </h2>
+    }
+
+    <div class="row gx-5 justify-content-center">
+        <div class="col-lg-8 col-xl-6">
+        @{
+            <form id="contactForm" method="post" action="SendEmail">
+                <!-- Name & Email input-->
+                <div class="form-floating mb-3">
+                    <input class="form-control" id="name" type="text" name="receiver" placeholder="Enter your name..." />
+                    <label for="name">Email & Name (optional)</label>
+                    <div class="invalid-feedback" data-sb-feedback="name:required">A name is required.</div>
+                </div>
+
+                <!-- Subject input-->
+                <div class="form-floating mb-3">
+                    <input class="form-control" id="subject" type="text" name="subject" placeholder="Enter a subject" data-sb-validations="required" />
+                    <label for="subject">Subject (required)</label>
+                    <div class="invalid-feedback" data-sb-feedback="message:required">A subject is required.</div>
+                </div>
+
+                <!-- Message input-->
+                <div class="form-floating mb-3">
+                    <textarea class="form-control" id="message" type="text" name="a_message" placeholder="Enter your message here..." style="height: 10rem" data-sb-validations="required"></textarea>
+                    <label for="message">Message/Recommendation (required)</label>
+                    <div class="invalid-feedback" data-sb-feedback="message:required">A message is required.</div>
+                </div>
+
+                <!-- Submit success message-->
+                <!---->
+                <!-- This is what your users will see when the form-->
+                <!-- has successfully submitted-->
+                <div class="d-none" id="submitSuccessMessage">
+                    <div class="text-center mb-3">
+                        <div class="fw-bolder">Form submission successful!</div>
+                        To activate this form, sign up at
+                        <br />
+                        <a href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
+                    </div>
+                </div>
+
+                <!-- Submit error message-->
+                <!---->
+                <!-- This is what your users will see when there is-->
+                <!-- an error submitting the form-->
+                <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message!</div></div>
+
+                <!-- Submit Button-->
+                <div class="d-grid">
+                    <input class="btn btn-success btn-lg" type="submit" value="Send" />
+                </div>
+            </form>
+        }
         </div>
-    </form>
-}
+    </div>
+</div>
