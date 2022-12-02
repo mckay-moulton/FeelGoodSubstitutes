@@ -1,4 +1,9 @@
-﻿@{
+﻿@*IS 405 - Final Project
+Group: Eat, Drink, and Be Married
+Members: Alexis Jane Ferolino, Dallin Ladle, Greg Marks, McKay Moulton*@
+
+
+@{
     ViewData["Title"] = "Home Page";
 }
 
@@ -12,7 +17,7 @@
                     <h1 class="display-5 fw-bolder text-white mb-2">Welcome to Feel Good Substitutes!</h1>
                     <p class="lead fw-normal text-white-50 mb-4">Quickly find eco-friendly substitutes for everyday products you can feel good about!</p>
                     <div class="d-grid gap-3 d-sm-flex justify-content-sm-center justify-content-xl-start">
-                        <a class="btn btn-primary btn-lg px-4 me-sm-3" asp-controller="Home" asp-action="CategoryView">Get Started</a>
+                        <a class="btn btn-success btn-lg px-4 me-sm-3" asp-controller="Home" asp-action="CategoryView">Get Started</a>
                         <a class="btn btn-outline-light btn-lg px-4" asp-controller="Home" asp-action="AboutUs">Learn More</a>
                     </div>
                 </div>
@@ -59,8 +64,44 @@
                         </button>
                     </div>
                 </div>
-                @*<img class="img-fluid rounded-3 my-5" src="https://dummyimage.com/600x400/343a40/6c757d" alt="..." />*@
             </div>
         </div>
     </div>
 </header>
+
+<section class="py-5" id="features">
+    <div class="container px-5 my-5">
+        <div class="row gx-5">
+            <div class="col-lg-4 mb-5 mb-lg-0"><h2 class="fw-bolder mb-0 text-success">Eco-friendly ways to everyday living.</h2></div>
+            <div class="col-lg-8">
+                <div class="row gx-5 row-cols-1 row-cols-md-2">
+                    <div class="col mb-5 h-100">
+                        <h2 class="h5"><i class="bi bi-arrow-repeat text-success"></i>&ensp;Reusable</h2>
+                        <p class="mb-0">
+                            Products can be used again more than once.
+                        </p>
+                    </div>
+                    <div class="col mb-5 h-100">
+                        <h2 class="h5"><i class="bi bi-flower1 text-success"></i>&ensp;Biodegradable</h2>
+                        <p class="mb-0">
+                            Products are able to decay naturally and in a way that is not harmful to the environment
+                        </p>
+                    </div>
+                    <div class="col mb-5 mb-md-0 h-100">
+                        <h2 class="h5"><i class="bi bi-recycle text-success"></i>&ensp;Recyclable</h2>
+                        <p class="mb-0">
+                            Used or waste materials from products that can be treated or processed so as to make suitable for reuse
+                            process of converting waste materials into new materials and objects
+                        </p>
+                    </div>
+                    <div class="col h-100">
+                        <h2 class="h5"><i class="bi bi-tree text-success"></i>&ensp;Sustainable</h2>
+                        <p class="mb-0">
+                            Products made responsibly to conserve natural resources and protect global ecosystems now and in the future.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

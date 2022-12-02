@@ -1,10 +1,10 @@
 ﻿@{
     ViewData["Title"] = "About Us";
 }
-<div class="text-center">
+@*<div class="text-center">
     <h1 class="display-4">@ViewData["Title"]</h1>
     <p>
-        We are four college students who have seen the negative impact that most of the products we use, each and every day, can have on the environment. 
+        We are four college students who have seen the negative impact that most of the products we use, each and every day, can have on the environment.
         We believe that products don't have to be harmful and wasteful. There are solutions out there that are natural and safe for the environment. We hope to point you to the right direction!
     </p>
 </div>
@@ -13,7 +13,8 @@
 
 <div class="text-center">
     <h2 class="display-6">Our Mission</h2>
-    <p>Our mission is to promote environmentally friendly products that we believe can help to reduce waste and pollution around the globe.  
+    <p>
+        Our mission is to promote environmentally friendly products that we believe can help to reduce waste and pollution around the globe.
         <br>
     </p>
 </div>
@@ -23,7 +24,100 @@
 <div class="text-center">
     <h2 class="display-6">Who are we?</h2>
     <p>
-        We are a group of environmental activists who have a passion for environmentally friendly products that can replace more harmful items people use in their daily lives. 
-        We are concerned about our communities, our countries and the world. We hope to aid people as they switch from harmful plastics, non-recycable materials, and detrimental chemicals to more sustainable and safe ingredients and practices. 
+        We are a group of environmental activists who have a passion for environmentally friendly products that can replace more harmful items people use in their daily lives.
+        We are concerned about our communities, our countries and the world. We hope to aid people as they switch from harmful plastics, non-recycable materials, and detrimental chemicals to more sustainable and safe ingredients and practices.
     </p>
-</div>
+</div>*@
+
+@*=============== Bootstrap Template ===============*@
+
+<main class="text-center">
+    <br />
+
+    <!-- Header-->
+    <div class="text-center my-5">
+        <h1 class="fw-bolder mb-3" style="color: #005C2D;">Our mission is to promote environmentally friendly products that we believe can help to reduce waste and pollution around the globe.</h1>
+        <p class="lead fw-normal text-muted">
+            We are a group of environmental activists who have a passion for environmentally friendly products that can replace more harmful items people use in their daily lives.
+            We are concerned about our communities, our countries and the world. We hope to aid people as they switch from harmful plastics, non-recycable materials, and detrimental chemicals to more sustainable and safe ingredients and practices.
+        </p>
+        @*<a class="btn btn-primary btn-lg" href="#scroll-target">Read our story</a>*@
+    </div>
+    <!-- About section one-->
+    <section class="py-5 bg-light" id="scroll-target">
+        <div class="container px-5 my-5">
+            <div class="row gx-5 align-items-center">
+                <div class="col-lg-6"><img class="img-fluid rounded mb-5 mb-lg-0" src="https://images.squarespace-cdn.com/content/v1/5eeb642fb10c00482896543e/1632106760038-F7BJV1BLWHVXSHZKH0QC/unsplash-image-BJUoZu0mpt0.jpg" alt="..." /></div>
+                <div class="col-lg-6">
+                    <h2 class="fw-bolder">Our founding</h2>
+                    <p class="lead fw-normal text-muted mb-0">
+                        We are four college students who have seen the negative impact that most of the products we use, each and every day, can have on the environment.
+                        We believe that products don't have to be harmful and wasteful. There are solutions out there that are natural and safe for the environment. We hope to point you to the right direction!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Team members section-->
+    <section class="py-5 bg-light">
+        <div class="container px-5 my-5">
+            <div class="text-center">
+                <h2 class="fw-bolder">Our team</h2>
+                @*<p class="lead fw-normal text-muted mb-5">Dedicated to quality and your success</p>*@
+            </div>
+            <div class="row gx-5 row-cols-1 row-cols-sm-2 row-cols-xl-4 justify-content-center">
+                <div class="col mb-5 mb-5 mb-xl-0">
+                    <div class="text-center">
+                        <img class="img-fluid rounded-circle mb-4 px-4" src="https://m.media-amazon.com/images/M/MV5BZjdkYjg1NzMtOTY2YS00ZWI1LWEwZWYtOTU1YTM2ODA2ZWY5XkEyXkFqcGdeQXVyMTM1MjAxMDc3._V1_.jpg" alt="..." />
+                        <h5 class="fw-bolder">McKay Moulton</h5>
+                        <div class="fst-italic text-muted">Founder &amp; CEO</div>
+                    </div>
+                </div>
+                <div class="col mb-5 mb-5 mb-xl-0">
+                    <div class="text-center">
+                        <img class="img-fluid rounded-circle mb-4 px-4" src="https://ca.slack-edge.com/T040EKNML8M-U040C7WGZ0W-9bf6ac9f2720-512" alt="..." />
+                        <h5 class="fw-bolder">Dallin Ladle</h5>
+                        <div class="fst-italic text-muted">CFO</div>
+                    </div>
+                </div>
+                <div class="col mb-5 mb-5 mb-sm-0">
+                    <div class="text-center">
+                        <img class="img-fluid rounded-circle mb-4 px-4" src="https://cdn.britannica.com/92/215392-050-96A4BC1D/Australian-actor-Chris-Hemsworth-2019.jpg" alt="..." />
+                        <h5 class="fw-bolder">Greg Marks</h5>
+                        <div class="fst-italic text-muted">Operations Manager</div>
+                    </div>
+                </div>
+                <div class="col mb-5">
+                    <div class="text-center">
+                        <img class="img-fluid rounded-circle mb-4 px-4" src="https://media-exp1.licdn.com/dms/image/C5603AQHmq3hQaAnCVg/profile-displayphoto-shrink_800_800/0/1631839828064?e=1675296000&v=beta&t=V4WE3YzS67RMYTUAg7p8MY7taWsNvwrutg3aLRcqLBQ" alt="..." />
+                        <h5 class="fw-bolder">Alexis Ferolino</h5>
+                        <div class="fst-italic text-muted">CTO</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+
+<!-- Footer-->
+<!--<footer class="bg-dark py-4 mt-auto">
+    <div class="container px-5">
+        <div class="row align-items-center justify-content-between flex-column flex-sm-row">
+            <div class="col-auto"><div class="small m-0 text-white">Copyright &copy; Your Website 2022</div></div>
+            <div class="col-auto">
+                <a class="link-light small" href="#!">Privacy</a>
+                <span class="text-white mx-1">&middot;</span>
+                <a class="link-light small" href="#!">Terms</a>
+                <span class="text-white mx-1">&middot;</span>
+                <a class="link-light small" href="#!">Contact</a>
+            </div>
+        </div>
+    </div>
+</footer>-->
+
+
+<!-- Bootstrap core JS-->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Core theme JS-->
+<script src="js/scripts.js"></script>
