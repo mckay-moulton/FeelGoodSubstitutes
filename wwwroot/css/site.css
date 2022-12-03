@@ -17,3 +17,16 @@ body {
   margin-bottom: 60px;
 }
 
+.image {
+    opacity: 1;
+    transition: .5s ease;
+    backface-visibility: hidden;
+    /*==========*/
+    width: 200px;
+    height: 200px;
+    object-fit: contain;
+}
+
+.image:hover {
+    opacity: 0.6;
+}
